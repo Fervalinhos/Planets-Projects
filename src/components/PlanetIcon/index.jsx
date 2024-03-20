@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import styles from './styles'
 
-const PlanetIcon = ({Planet}) => {
+const PlanetIcon = ({Planet, PlanetInfo}) => {
   return (
            <View key={Planet.id} style={styles.planet}>
               <Text style={styles.text}>{Planet.name}</Text>

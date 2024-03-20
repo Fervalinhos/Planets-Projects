@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, TextInput, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import Title from '../../components/Title'
 import { PlanetData } from '../../data/PlanetData'
@@ -69,10 +69,90 @@ export default function Planetary() {
 
       <ScrollView>
 
+        <View style={styles.inputsContainer}>
+
+          <TextInput
+            placeholder="Escolha a primeira cor de seu planeta"
+            style={styles.userInput}
+            onChangeText={setColor1}
+            value={color1}
+          />
+
+          <TextInput
+            placeholder="Escolha a segunda cor de seu planeta"
+            style={styles.userInput}
+            onChangeText={setColor2}
+            value={color2}
+          />
+
+          <TextInput
+            placeholder="Nome do planeta"
+            style={styles.userInput}
+            onChangeText={setName}
+            value={name}
+          />
+
+
+          <TextInput
+            placeholder="Conquista"
+            style={styles.userInput}
+            onChangeText={setConquest}
+            value={conquest}
+          />
+
+
+          <TextInput
+            placeholder="População"
+            style={styles.userInput}
+            onChangeText={setPopulation}
+            value={population}
+          />
+
+          <TextInput
+            placeholder="Assentamentos"
+            style={styles.userInput}
+            onChangeText={setSettlements}
+            value={settlements}
+          />
+
+          <TextInput
+            placeholder="Recursos Naturais"
+            style={styles.userInput}
+            onChangeText={setNatural_resources}
+            value={natural_resources}
+          />
+
+          <TextInput
+            placeholder="Localização"
+            style={styles.userInput}
+            onChangeText={setLocation}
+            value={location}
+          />
+
+          <TextInput
+            placeholder="Comunicação"
+            style={styles.userInput}
+            onChangeText={setCommunication}
+            value={communication}
+          />
+
+          <TextInput
+            placeholder="Ruler"
+            style={styles.userInput}
+            onChangeText={setRuler}
+            value={ruler}
+          />
+
+          <TouchableOpacity style={styles.button} onPress={createPlanet}>
+            <Text>Criar Planeta</Text>
+          </TouchableOpacity>
+
+        </View>
+
 
         {
           planets.length > 0 ? planets.map((Planet) => (
-            <PlanetIcon Planet={Planet} />
+            <PlanetIcon Planet={Planet} PlanetInfo={planets} />
           )) : (
             <Text style={styles.text}>No Planets</Text>
           )

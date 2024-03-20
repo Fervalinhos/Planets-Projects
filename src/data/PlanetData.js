@@ -11,3 +11,4 @@ export const PlanetData = {
     ruler: "Hutts.",
 
 };
+
