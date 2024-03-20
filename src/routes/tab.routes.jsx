@@ -2,8 +2,8 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Home from "../screens/Home";
-import Category from "../screens/Category";
-import Profile from "../screens/Profile";
+import About from "../screens/About";
+import Planetary from "../screens/Planetary";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -13,13 +13,13 @@ const TabRoutes = () => {
       initialRouteName="Feed"
       activeColor="#e94560"
       inactiveColor='#5e2334'
-      barStyle={{ 
-        
-      backgroundColor: '#12121f',
-      borderTopColor: '#e94560',
-      borderTopWidth: 1,
-    
-    }}
+      barStyle={{
+
+        backgroundColor: '#12121f',
+        borderTopColor: '#e94560',
+        borderTopWidth: 1,
+
+      }}
     >
       <Tab.Screen
         name="Home"
@@ -34,25 +34,26 @@ const TabRoutes = () => {
         }}
       />
       <Tab.Screen
-        name="Category"
-        component={Category}
+        name="Planetary"
+        component={Planetary}
         options={{
-          tabBarLabel: 'Category',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="view-headline" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Planetary',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="account" color={color} size={26} />
           ),
         }}
       />
+      <Tab.Screen
+        name="About"
+        component={About}
+        options={{
+          tabBarLabel: 'About',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="view-headline" color={color} size={26} />
+          ),
+        }}
+      />
+
     </Tab.Navigator>
   );
 };
