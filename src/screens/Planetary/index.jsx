@@ -8,15 +8,20 @@ import Planets from '../../models/Planets'
 import { useState } from 'react'
 
 import { useNavigation } from '@react-navigation/native'
+import PlanetIcon from '../../components/PlanetIcon'
 
 const PlanetList = new Planets()
+PlanetList.addPlanet(PlanetData)
 
 
 export default function Planetary() {
 
+  console.log(planets);
+  console.log(PlanetList);
+
   const navigation = useNavigation()
 
-  const [Planet, setPlanet] = useState(PlanetData)
+  const [PlanetData, setPlanetData] = useState(PlanetData)
 
   const [color1, setColor1] = useState('')
   const [color2, setColor2] = useState('')
@@ -27,9 +32,9 @@ export default function Planetary() {
   const [natural_resources, setNatural_resources] = useState('')
   const [location, setLocation] = useState('')
   const [communication, setCommunication] = useState('')
-  const [ruler, setRuler] = useState('')
+  const [ruler, setRuler] = useState('');
 
-  const [planets, setPlanets] = useState([])
+  const [planets, setPlanets] = useState(PlanetList.planets);
 
   const createPlanet = () => {
     const newPlanet = new Planet(color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler)
@@ -66,18 +71,11 @@ export default function Planetary() {
 
 
         {
-          Planets ? Planets.map((Planet) => (
-            <View key={Planet.id} style={styles.planet}>
-              <Text style={styles.text}>{Planet.name}</Text>
-              <Text style={styles.text}>{Planet.conquest}</Text>
-              <Text style={styles.text}>{Planet.population}</Text>
-              <Text style={styles.text}>{Planet.settlements}</Text>
-              <Text style={styles.text}>{Planet.natural_resources}</Text>
-              <Text style={styles.text}>{Planet.location}</Text>
-              <Text style={styles.text}>{Planet.communication}</Text>
-              <Text style={styles.text}>{Planet.ruler}</Text>
-            </View>
-          )) : <Text style={styles.text}>No Planets</Text>
+          planets.length > 0 ? planets.map((Planet) => (
+            <PlanetIcon Planet={Planet} />
+          )) : (
+            <Text style={styles.text}>No Planets</Text>
+          )
         }
 
 

@@ -8,5 +8,6 @@ export const PlanetData = {
     natural_resources: "Tatooine é considerado um dos planetas mais antigos conhecidos. Sabe-se que era composto de um núcleo derretido envolto de uma manta rochosa e uma crosta de rochas de silicato. Os registros fósseis sugerem que Tatooine estêve coberto pelo menos uma vez por grandes oceanos, que secaram, expondo muitas formações geológicas do período pré-árido, inclusive o Beggar's Canyon, formado em torno de 2.000.000 ABY, quando Tatooine era ainda um lugar exuberante. Outras formações geológicas notáveis incluem o Mar de Dunas, um enorme deserto rico em sódio, o Mushroom Mesa uma formação vasta de pedras gigantes eretas, e o Jundland Wastes, uma região rochosa. Um dito folclórico dos colonos dizia que os olhos de uma pessoa queimariam mais depressa se ficassem olhando direto para as planícies do que diretamente para os sóis.",
     location: "Tatooine foi um planeta desértico em um sistema estelar binário do setor Arkanis na Orla Exterior.",
     communication: "Num achei ainda",
-    ruler: "Hutts."
+    ruler: "Hutts.",
+
 };
