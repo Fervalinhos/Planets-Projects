@@ -8,7 +8,7 @@ import Planets from '../../models/Planets'
 import { useState } from 'react'
 
 import { useNavigation } from '@react-navigation/native'
-import PlanetIcon from '../../components/PlanetIcon'
+import PlanetDisplay from '../../components/PlanetDisplay'
 import Inputs from '../../components/Inputs'
 
 const PlanetList = new Planets()
@@ -98,7 +98,7 @@ export default function Planetary() {
 
         {
           planets.length > 0 ? planets.map((Planet) => (
-            <PlanetIcon Planet={Planet} removePlanet={removePlanet} PlanetInfo={planets} />
+            <PlanetDisplay Planet={Planet} removePlanet={removePlanet} PlanetInfo={planets} />
           )) : (
             <Text style={styles.text}>No Planets</Text>
           )
