@@ -1,10 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import styles from './styles'
+import PlanetIcon from '../PlanetIcon'
 
-const PlanetsCard = ({ name, conquest, population, settlements, natural_resources, location, communication, ruler }) => {
+const PlanetsCard = ({ color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler }) => {
     return (
         <View>
+            <PlanetIcon color1={color1} color2={color2} />
             <Text style={styles.text}>{name}</Text>
             <Text style={styles.text}>{conquest}</Text>
             <Text style={styles.text}>{population}</Text>

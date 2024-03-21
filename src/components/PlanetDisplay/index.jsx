@@ -7,17 +7,13 @@ import PlanetsCard from '../PlanetsCard'
 
 
 
-
-
 const PlanetDisplay = ({ Planet, removePlanet }) => {
 
 
   const [buttonActive, setButtonActive] = useState(false)
 
 
-
-
-
+  
   return (
     <View key={Planet.id} style={styles.planetColor}>
 
@@ -26,7 +22,7 @@ const PlanetDisplay = ({ Planet, removePlanet }) => {
         <Text style={styles.text}>{Planet.name}</Text>
       </TouchableOpacity>
       {
-        buttonActive ? <PlanetsCard name={Planet.name} conquest={Planet.conquest} population={Planet.population} settlements={Planet.settlements} natural_resources={Planet.natural_resources} location={Planet.location} communication={Planet.communication} ruler={Planet.ruler} /> : null
+        buttonActive ? <PlanetsCard color1={Planet.color1} color2={Planet.color2} name={Planet.name} conquest={Planet.conquest} population={Planet.population} settlements={Planet.settlements} natural_resources={Planet.natural_resources} location={Planet.location} communication={Planet.communication} ruler={Planet.ruler} /> : null
       }
 
 

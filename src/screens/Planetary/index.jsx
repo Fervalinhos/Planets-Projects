@@ -98,7 +98,7 @@ export default function Planetary() {
 
         {
           planets.length > 0 ? planets.map((Planet) => (
-            <PlanetDisplay Planet={Planet} removePlanet={removePlanet} PlanetInfo={planets} />
+            <PlanetDisplay Planet={Planet} removePlanet={removePlanet} />
           )) : (
             <Text style={styles.text}>No Planets</Text>
           )

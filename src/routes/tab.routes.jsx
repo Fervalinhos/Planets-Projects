@@ -11,13 +11,13 @@ const TabRoutes = () => {
   return (
     <Tab.Navigator
       initialRouteName="Feed"
-      activeColor="#e94560"
-      inactiveColor='#5e2334'
+      activeColor="#f9f9f9"
+      inactiveColor='#B5B7B7'
       barStyle={{
 
-        backgroundColor: '#12121f',
-        borderTopColor: '#e94560',
-        borderTopWidth: 1,
+        backgroundColor: '#0D0D0D',
+        borderTopColor: '#123C73',
+        borderTopWidth: 2,
 
       }}
     >
@@ -39,7 +39,7 @@ const TabRoutes = () => {
         options={{
           tabBarLabel: 'Planetary',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="account" color={color} size={26} />
+            <MaterialCommunityIcons name="weather-hurricane" color={color} size={26} />
           ),
         }}
       />
