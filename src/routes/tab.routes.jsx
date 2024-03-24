@@ -4,6 +4,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Home from "../screens/Home";
 import About from "../screens/About";
 import Planetary from "../screens/Planetary";
+import PlanetInfo from '../screens/PlanetInfo';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -44,6 +45,17 @@ const TabRoutes = () => {
         }}
       />
       <Tab.Screen
+        name="PlanetInfo"
+        component={PlanetInfo}
+
+        options={{
+          tabBarLabel: 'PlanetInfo',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="information" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="About"
         component={About}
         options={{
@@ -53,6 +65,7 @@ const TabRoutes = () => {
           ),
         }}
       />
+
 
     </Tab.Navigator>
   );

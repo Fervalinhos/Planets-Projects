@@ -7,7 +7,7 @@ import Planet from '../../models/Planet'
 import Planets from '../../models/Planets'
 import { useState } from 'react'
 
-import { useNavigation } from '@react-navigation/native'
+
 import PlanetDisplay from '../../components/PlanetDisplay'
 import Inputs from '../../components/Inputs'
 
@@ -21,7 +21,7 @@ export default function Planetary() {
   console.log(PlanetList);
   
 
-  const navigation = useNavigation()
+ 
 
 
   const [color1, setColor1] = useState('')
@@ -71,7 +71,7 @@ export default function Planetary() {
 
   return (
     <View style={styles.container}>
-      <Title title="Profile -- 🚀😃" />
+      <Title title="Planetary -- 🚀😃" />
 
 
       <ScrollView>
