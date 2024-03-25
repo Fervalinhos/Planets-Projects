@@ -18,7 +18,7 @@ const PlanetDisplay = ({ Planet, removePlanet, updatePlanet }) => {
   return (
     <View key={Planet.id} style={styles.planetColor}>
 
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("PlanetInfo", {Planet, removePlanet})}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("PlanetInfo", {Planet, removePlanet, updatePlanet})}>
         <PlanetIcon color1={Planet.color1} color2={Planet.color2} />
         <Text style={styles.text}>{Planet.name}</Text>
       </TouchableOpacity>

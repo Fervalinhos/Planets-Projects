@@ -6,12 +6,17 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function PlanetInfo({ route }) {
 
-    const {Planet, removePlanet }= route.params
+    const {Planet, removePlanet, updatePlanet }= route.params
     const navigation = useNavigation()
 
 
     const DeletePlanet = () => {
         removePlanet(Planet.id)
+        navigation.navigate('Planetary')
+    }
+
+    const UpdatePlanet = () => {
+        updatePlanet(Planet.id)
         navigation.navigate('Planetary')
     }
 
@@ -27,6 +32,11 @@ export default function PlanetInfo({ route }) {
                 <TouchableOpacity style={styles.button} onPress={() => DeletePlanet()}>
                     <Text>Remove</Text>
                 </TouchableOpacity>
+
+                <TouchableOpacity style={styles.button} onPress={() => UpdatePlanet()}>
+                    <Text>Update</Text>
+                </TouchableOpacity>
+
             </View>
         ) : (
             <View>
