@@ -24,7 +24,7 @@ import { PlanetData } from "../data/PlanetData";
 
     upadatePlanet(color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler) {
         this.planets = this.planets.map(planet => {
-            if (planet.id === id) {
+            if (planet.id == id) {
                 planet.color1 = color1;
                 planet.color2 = color2;
                 planet.name = name;
