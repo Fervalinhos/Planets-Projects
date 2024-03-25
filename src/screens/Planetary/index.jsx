@@ -45,7 +45,7 @@ export default function Planetary() {
   const createPlanet = () => {
 
     if (update) {
-      PlanetList.upadatePlanet(color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler)
+      PlanetList.upadatePlanet(Planet.id, color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler)
       setPlanets(PlanetList.getPlanets())
       setUpdate(false)
       clearFillds()
