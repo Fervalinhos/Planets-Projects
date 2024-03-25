@@ -39,28 +39,29 @@ export default function Planetary() {
 
   const [update, setUpdate] = useState(false)
 
-  
+
 
 
   const createPlanet = () => {
 
     if (update) {
-      PlanetList.upadatePlanet(Planet.id, color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler)
+
+      PlanetList.upadatePlanet(color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler)
       setPlanets(PlanetList.getPlanets())
       setUpdate(false)
       clearFillds()
     } else {
-      
 
-    const newPlanet = new Planet(color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler)
 
-    PlanetList.addPlanet(newPlanet)
-    setPlanets(PlanetList.getPlanets())
+      const newPlanet = new Planet(color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler)
 
-    clearFillds()
+      PlanetList.addPlanet(newPlanet)
+      setPlanets(PlanetList.getPlanets())
 
-    return newPlanet;
-  }
+      clearFillds()
+
+      return newPlanet;
+    }
 
   }
 
@@ -88,6 +89,11 @@ export default function Planetary() {
     setUpdate(true)
   }
 
+
+  useEffect(() => {
+    setPlanets(PlanetList.getPlanets())
+  }, [PlanetList.planets])
+  
 
 
 
