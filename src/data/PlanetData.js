@@ -1,4 +1,5 @@
 export const PlanetData = {
+    id: 1,
     color1: "#b09a8b",
     color2: "#dac8b3",
     name: "Tatooine",
@@ -9,7 +10,6 @@ export const PlanetData = {
     location: "Tatooine foi um planeta desértico em um sistema estelar binário do setor Arkanis na Orla Exterior.",
     communication: "Num achei ainda",
     ruler: "Hutts.",
-    id: 1
 
 };
 

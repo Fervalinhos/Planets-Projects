@@ -41,12 +41,6 @@ import { PlanetData } from "../data/PlanetData";
     }
 }
 
-// const PlanetList = new Planets();
-// const newPlanet = new Planet(PlanetData.color1, PlanetData.color2, PlanetData.name, PlanetData.conquest, PlanetData.population, PlanetData.settlements, PlanetData.natural_resources, PlanetData.location, PlanetData.communication, PlanetData.ruler);
-// PlanetList.addPlanet(newPlanet);
-
-
-
 
 export default Planets;
 

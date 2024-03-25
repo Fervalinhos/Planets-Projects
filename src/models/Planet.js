@@ -1,5 +1,6 @@
 export default class Planet {
     constructor(color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler) {
+        this.id = parseInt(Math.random() * 200);
         this.color1 = color1;
         this.color2 = color2;
         this.name = name;
@@ -10,6 +11,5 @@ export default class Planet {
         this.location = location;
         this.communication = communication;
         this.ruler = ruler;
-        this.id = parseInt(Math.random() * 200)
     }
 }

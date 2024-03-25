@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native'
 
 
 
-const PlanetDisplay = ({ Planet, removePlanet }) => {
+const PlanetDisplay = ({ Planet, removePlanet, updatePlanet }) => {
 
 
   const [buttonActive, setButtonActive] = useState(false)
@@ -30,6 +30,13 @@ const PlanetDisplay = ({ Planet, removePlanet }) => {
       <TouchableOpacity style={styles.button} onPress={() => removePlanet(Planet.id)}>
         <Text>Remove</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => updatePlanet(Planet.id)}>
+        <Text>Update</Text>
+      </TouchableOpacity>
+
+      
+      
     </View>
 
   )

@@ -5,7 +5,7 @@ import { PlanetData } from '../../data/PlanetData'
 
 import Planet from '../../models/Planet'
 import Planets from '../../models/Planets'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 import PlanetDisplay from '../../components/PlanetDisplay'
@@ -19,9 +19,9 @@ export default function Planetary() {
 
   console.log(planets);
   console.log(PlanetList);
-  
 
- 
+
+
 
 
   const [color1, setColor1] = useState('')
@@ -37,7 +37,21 @@ export default function Planetary() {
 
   const [planets, setPlanets] = useState(PlanetList.planets);
 
+  const [update, setUpdate] = useState(false)
+
+  
+
+
   const createPlanet = () => {
+
+    if (update) {
+      PlanetList.upadatePlanet(color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler)
+      setPlanets(PlanetList.getPlanets())
+      setUpdate(false)
+      clearFillds()
+    } else {
+      
+
     const newPlanet = new Planet(color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler)
 
     PlanetList.addPlanet(newPlanet)
@@ -48,11 +62,39 @@ export default function Planetary() {
     return newPlanet;
   }
 
+  }
+
   const removePlanet = (id) => {
     PlanetList.removePlanet(id)
     setPlanets(PlanetList.getPlanets())
   }
-  
+
+  const updatePlanet = (id) => {
+    const planet = PlanetList.getPlanet(id)
+
+    console.log(planet);
+
+    setColor1(planet.color1)
+    setColor2(planet.color2)
+    setName(planet.name)
+    setConquest(planet.conquest)
+    setPopulation(planet.population)
+    setSettlements(planet.settlements)
+    setNatural_resources(planet.natural_resources)
+    setLocation(planet.location)
+    setCommunication(planet.communication)
+    setRuler(planet.ruler)
+
+    setUpdate(true)
+  }
+
+
+
+
+
+
+
+
 
   const clearFillds = () => {
     setColor1('')
@@ -90,7 +132,9 @@ export default function Planetary() {
           <Inputs placeholder={"Ruler"} value={ruler} onChangeText={setRuler} />
 
           <TouchableOpacity style={styles.button} onPress={createPlanet}>
-            <Text>Criar Planeta</Text>
+            {
+              update ? <Text>Update</Text> : <Text>Create</Text>
+            }
           </TouchableOpacity>
 
         </View>
@@ -98,7 +142,7 @@ export default function Planetary() {
 
         {
           planets.length > 0 ? planets.map((Planet) => (
-            <PlanetDisplay Planet={Planet} removePlanet={removePlanet} />
+            <PlanetDisplay Planet={Planet} removePlanet={removePlanet} updatePlanet={updatePlanet} />
           )) : (
             <Text style={styles.text}>No Planets</Text>
           )
