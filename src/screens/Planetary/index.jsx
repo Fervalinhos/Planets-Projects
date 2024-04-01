@@ -14,6 +14,7 @@ import Inputs from '../../components/Inputs'
 
 
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { symbol } from 'prop-types'
 
 const PlanetList = new Planets()
 PlanetList.addPlanet(PlanetData)
@@ -138,9 +139,9 @@ export default function Planetary() {
       setMsg('')
     }, 3000)
   }
-  
-const [date, setDate] = useState(new Date());
-const [showDatePicker, setShowDatePicker] = useState(false);
+
+  const [date, setDate] = useState(new Date());
+  const [showDatePicker, setShowDatePicker] = useState(false);
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -152,10 +153,6 @@ const [showDatePicker, setShowDatePicker] = useState(false);
   const dataPiecker = () => {
     setShowDatePicker(true);
   }
-
-
-
-
 
 
 
@@ -188,18 +185,20 @@ const [showDatePicker, setShowDatePicker] = useState(false);
                     is24Hour={true}
                     display="default"
                     onChange={onChange}
+
                   />
                 )
               }
 
-              <TouchableOpacity style={styles.inputDate} onPress={dataPiecker}>
-                <Text>{date.toLocaleDateString()}</Text>
-              </TouchableOpacity>
+
 
               <Inputs placeholder={"Escolha a primeira cor de seu planeta"} value={color1} onChangeText={setColor1} />
               <Inputs placeholder={"Escolha a segunda cor de seu planeta"} value={color2} onChangeText={setColor2} />
               <Inputs placeholder={"Nome do planeta"} value={name} onChangeText={setName} />
               {/* <Inputs placeholder={"Conquista"} value={conquest} onChangeText={setConquest} /> */}
+              <TouchableOpacity style={styles.inputDate} onPress={dataPiecker}>
+                <Text style={styles.placeholder}>Escolha sua data de conquista</Text>
+              </TouchableOpacity>
               <Inputs placeholder={"População"} value={population} onChangeText={setPopulation} />
               <Inputs placeholder={"Assentamentos"} value={settlements} onChangeText={setSettlements} />
               <Inputs placeholder={"Recursos Naturais"} value={natural_resources} onChangeText={setNatural_resources} />

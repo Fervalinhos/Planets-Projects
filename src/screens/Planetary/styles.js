@@ -94,6 +94,10 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         color: 'black'
     },
+
+    placeholder: {
+        color: '#676767'
+    },
     
 
 });
