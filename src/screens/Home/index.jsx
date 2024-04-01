@@ -3,6 +3,7 @@ import styles from './styles'
 import Title from '../../components/Title'
 import { useNavigation } from '@react-navigation/native'
 import { Planet } from '../../data/PlanetData'
+import { ScrollView } from 'react-native-gesture-handler'
 
 
 
@@ -12,6 +13,7 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
+      <ScrollView style={styles.scroll}>
       <Title title="Home -- 🤐😅" />
 
       <View style={styles.details}>
@@ -27,6 +29,7 @@ export default function Home() {
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Planetary", { Planet })}>
         <Text style={styles.buttonText}>Veja o Planetario</Text>
       </TouchableOpacity>
+      </ScrollView>
     </View>
   )
 }
