@@ -1,6 +1,8 @@
-import { View, Text } from 'react-native'
+import { View, Text, Link } from 'react-native'
 import styles from './styles'
 import Title from '../../components/Title'
+import { Octicons, FontAwesome5, FontAwesome, Ionicons, AntDesign, FontAwesome6 } from '@expo/vector-icons';
+
 
 export default function Category() {
   return (
@@ -17,15 +19,28 @@ export default function Category() {
 
       <View style={styles.technologies}>
         <Text style={styles.text}>Tecnologias utilizadas:</Text>
-        <Text style={styles.text}>React Native</Text>
-        <Text style={styles.text}>Node.js</Text>
-        <Text style={styles.text}>Express</Text>
-        <Text style={styles.text}>SQLite</Text>
-        </View>
-  
+        <View style={styles.containerTechnologies}>
+        <Octicons name="mark-github" size={24} color="black" />
+        <FontAwesome5 name="linkedin" size={24} color="black" />
+        <FontAwesome name="css3" size={24} color="black" />
+        <Ionicons name="logo-javascript" size={24} color="black" />
+        <AntDesign name="HTML" size={24} color="black" />
+        <FontAwesome6 name="node-js" size={24} color="black" />
+        <FontAwesome5 name="react" size={24} color="black" />
+      </View>
+      </View>
 
+
+      <View>
 
         
+
+
+      </View>
+
+
+
+
 
 
     </View>

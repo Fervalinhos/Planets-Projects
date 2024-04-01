@@ -4,7 +4,35 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#F5FCFF"
+        backgroundColor: "#f2f2f2"
+
+    },
+
+    text: {
+        fontSize: 20,
+        textAlign: "center",
+        margin: 10
+    },
+
+    button: {
+        backgroundColor: "blue",
+        padding: 10,
+        borderRadius: 5
+    },
+
+    buttonText: {
+        color: "white",
+        fontSize: 20,
+        textAlign: "center"
+    },
+
+
+    details: {
+        fontSize: 20,
+        textAlign: "center",
+        margin: 10,
+        backgroundColor: "#ffffff",
+        padding: 10,
 
     },
 

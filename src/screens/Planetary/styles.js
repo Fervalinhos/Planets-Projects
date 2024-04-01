@@ -72,6 +72,28 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         color: 'white',
     },
+
+    msgError: {
+        color: 'white',
+        fontSize: 15,
+        textAlign: 'center'
+    },
+
+    msgErrorContainer: {
+        backgroundColor: '#c7674e',
+        padding: 10,
+        margin: 5,
+        borderRadius: 10,
+        alignItems: 'center'
+    },
+
+    inputDate: {
+        backgroundColor: 'white',
+        padding: 10,
+        margin: 5,
+        borderRadius: 10,
+        color: 'black'
+    },
     
 
 });
