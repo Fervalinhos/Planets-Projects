@@ -7,7 +7,7 @@ const Inputs = ({ placeholder, onChangeText, value }) => {
         <View>
             <TextInput
                 placeholder={placeholder}
-                style={styles.userInput}
+                style={styles.input}
                 onChangeText={onChangeText}
                 value={value}
             />

@@ -28,15 +28,19 @@ export default function PlanetInfo({ route }) {
             {
                 Planet ? (
                     <View>
-                        <PlanetsCard color1={Planet.color1} color2={Planet.color2} name={Planet.name} conquest={Planet.conquest} population={Planet.population} settlements={Planet.settlements} natural_resources={Planet.natural_resources} location={Planet.location} communication={Planet.communication} ruler={Planet.ruler} />
+                        <PlanetsCard id={Planet.id} color1={Planet.color1} color2={Planet.color2} name={Planet.name} conquest={Planet.conquest} population={Planet.population} settlements={Planet.settlements} natural_resources={Planet.natural_resources} location={Planet.location} communication={Planet.communication} ruler={Planet.ruler} />
 
-                        <TouchableOpacity style={styles.button} onPress={() => DeletePlanet()}>
-                            <Text>Remove</Text>
-                        </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.button} onPress={() => UpdatePlanet()}>
-                            <Text>Update</Text>
-                        </TouchableOpacity>
+                        <View style={styles.containerButtons}>
+                            <TouchableOpacity style={styles.buttonRemove} onPress={() => DeletePlanet()}>
+                                <Text style={styles.textButton}>Remove</Text>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity style={styles.buttonUpdate} onPress={() => UpdatePlanet()}>
+                                <Text style={styles.textButton}>🖋️</Text>
+                            </TouchableOpacity>
+
+                        </View>
 
                     </View>
                 ) : (

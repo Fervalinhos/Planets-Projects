@@ -8,6 +8,9 @@ import { useNavigation } from '@react-navigation/native'
 
 
 
+
+
+
 const PlanetDisplay = ({ Planet, removePlanet, updatePlanet }) => {
 
 
@@ -27,14 +30,17 @@ const PlanetDisplay = ({ Planet, removePlanet, updatePlanet }) => {
       } */}
 
 
-      <TouchableOpacity style={styles.button} onPress={() => removePlanet(Planet.id)}>
-        <Text>Remove</Text>
+<View style={styles.containerButtons}>
+
+      <TouchableOpacity style={styles.buttonRemove} onPress={() => removePlanet(Planet.id)}>
+        <Text style={styles.textButton}>Remove</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => updatePlanet(Planet.id)}>
-        <Text>Update</Text>
+      <TouchableOpacity style={styles.buttonUpdate} onPress={() => updatePlanet(Planet.id)}>
+        <Text style={styles.textButton}>🖋️</Text>
       </TouchableOpacity>
 
+</View>
       
       
     </View>

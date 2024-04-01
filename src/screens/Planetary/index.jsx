@@ -34,10 +34,17 @@ export default function Planetary() {
   const [location, setLocation] = useState('')
   const [communication, setCommunication] = useState('')
   const [ruler, setRuler] = useState('');
+  const [planetId, setPlanetId] = useState('');
+  const [dispaly, setdispaly] = useState(false)
 
   const [planets, setPlanets] = useState(PlanetList.planets);
 
   const [update, setUpdate] = useState(false)
+
+  const inputDisplay = () => {
+    setdispaly(!dispaly)
+  }
+
 
 
 
@@ -46,9 +53,9 @@ export default function Planetary() {
 
     if (update) {
 
-      PlanetList.upadatePlanet(color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler)
-      setPlanets(PlanetList.getPlanets())
+      PlanetList.upadatePlanet(planetId, color1, color2, name, conquest, population, settlements, natural_resources, location, communication, ruler)
       setUpdate(false)
+      setdispaly(!dispaly)
       clearFillds()
     } else {
 
@@ -59,6 +66,7 @@ export default function Planetary() {
       setPlanets(PlanetList.getPlanets())
 
       clearFillds()
+      setdispaly(!dispaly)
 
       return newPlanet;
     }
@@ -72,6 +80,8 @@ export default function Planetary() {
 
   const updatePlanet = (id) => {
     const planet = PlanetList.getPlanet(id)
+    setdispaly(!dispaly)
+
 
     console.log(planet);
 
@@ -85,7 +95,7 @@ export default function Planetary() {
     setLocation(planet.location)
     setCommunication(planet.communication)
     setRuler(planet.ruler)
-
+    setPlanetId(id);
     setUpdate(true)
   }
 
@@ -93,14 +103,6 @@ export default function Planetary() {
   useEffect(() => {
     setPlanets(PlanetList.getPlanets())
   }, [PlanetList.planets])
-  
-
-
-
-
-
-
-
 
   const clearFillds = () => {
     setColor1('')
@@ -119,31 +121,46 @@ export default function Planetary() {
 
   return (
     <View style={styles.container}>
-      <Title title="Planetary -- 🚀😃" />
+      <ScrollView style={styles.scroll}>
+        <Title title="Planetary" />
+
+      <Text style={styles.title}>Descrição</Text>
+
+      <Text style={styles.textDescripition}>Planetary é um aplicativo que simula a criação de planetas, onde você pode criar, editar e remover planetas, além de visualizar informações detalhadas ao clicar em cada planeta.</Text>
 
 
-      <ScrollView>
 
-        <View style={styles.inputsContainer}>
+        {
+          dispaly ? (
+            <View style={styles.inputsContainer}>
 
-          <Inputs placeholder={"Escolha a primeira cor de seu planeta"} value={color1} onChangeText={setColor1} />
-          <Inputs placeholder={"Escolha a segunda cor de seu planeta"} value={color2} onChangeText={setColor2} />
-          <Inputs placeholder={"Nome do planeta"} value={name} onChangeText={setName} />
-          <Inputs placeholder={"Conquista"} value={conquest} onChangeText={setConquest} />
-          <Inputs placeholder={"População"} value={population} onChangeText={setPopulation} />
-          <Inputs placeholder={"Assentamentos"} value={settlements} onChangeText={setSettlements} />
-          <Inputs placeholder={"Recursos Naturais"} value={natural_resources} onChangeText={setNatural_resources} />
-          <Inputs placeholder={"Localização"} value={location} onChangeText={setLocation} />
-          <Inputs placeholder={"Comunicação"} value={communication} onChangeText={setCommunication} />
-          <Inputs placeholder={"Ruler"} value={ruler} onChangeText={setRuler} />
+              <TouchableOpacity style={styles.buttonClose} onPress={inputDisplay}>
+                <Text style={styles.textButton}>Fechar</Text>
+              </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button} onPress={createPlanet}>
-            {
-              update ? <Text>Update</Text> : <Text>Create</Text>
-            }
-          </TouchableOpacity>
+              <Inputs placeholder={"Escolha a primeira cor de seu planeta"} value={color1} onChangeText={setColor1} />
+              <Inputs placeholder={"Escolha a segunda cor de seu planeta"} value={color2} onChangeText={setColor2} />
+              <Inputs placeholder={"Nome do planeta"} value={name} onChangeText={setName} />
+              <Inputs placeholder={"Conquista"} value={conquest} onChangeText={setConquest} />
+              <Inputs placeholder={"População"} value={population} onChangeText={setPopulation} />
+              <Inputs placeholder={"Assentamentos"} value={settlements} onChangeText={setSettlements} />
+              <Inputs placeholder={"Recursos Naturais"} value={natural_resources} onChangeText={setNatural_resources} />
+              <Inputs placeholder={"Localização"} value={location} onChangeText={setLocation} />
+              <Inputs placeholder={"Comunicação"} value={communication} onChangeText={setCommunication} />
+              <Inputs placeholder={"Ruler"} value={ruler} onChangeText={setRuler} />
 
-        </View>
+              <TouchableOpacity style={styles.buttonCreate} onPress={createPlanet}>
+                {
+                  update ? <Text style={styles.UpdCreaButton}>Editar</Text> : <Text style={styles.UpdCreaButton}>Criar</Text>
+                }
+              </TouchableOpacity>
+
+            </View>
+          ) :
+            <TouchableOpacity style={styles.buttonOpen} onPress={inputDisplay}>
+              <Text style={styles.textButton}>Crie seu Planeta 🚀😃</Text>
+            </TouchableOpacity>
+        }
 
 
         {
