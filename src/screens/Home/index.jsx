@@ -1,9 +1,9 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import styles from './styles'
 import Title from '../../components/Title'
 import { useNavigation } from '@react-navigation/native'
 import { Planet } from '../../data/PlanetData'
-import { ScrollView } from 'react-native-gesture-handler'
+
 
 
 
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.scroll}>
-      <Title title="Home -- 🤐😅" />
+      <Title title="Home" />
 
       <View style={styles.details}>
         <Text style={styles.text}>Este é um aplicativo React Native chamado "Planetary". Ele permite aos usuários criar, editar e remover planetas. Cada planeta tem várias propriedades, incluindo cores, nome, conquista, população, assentamentos, recursos naturais, localização, comunicação e governante.</Text>
